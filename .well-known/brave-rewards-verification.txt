@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: rmgrimm.github.io
+Token: c033ee5b3f0c42c82d50a42f73bf92618dfb2ab210d9519307a4069a5748b8b8
