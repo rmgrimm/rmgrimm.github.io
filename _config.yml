@@ -1,0 +1,235 @@
+# Config
+# ========================================================================================
+
+# General settings
+# ---------------------------------------------------------------------------------------
+
+lang:        en_US
+logo:        /assets/img/headshot@256x256.jpg
+title:       Robert Grimm's GitHub
+tagline:     A selection of personal projects
+description: >
+  A selection of personal projects of Robert Grimm which are hosted
+  on GitHub.
+keywords:
+  - github
+  - Robert Grimm
+  - rmgrimm
+  - projects
+
+author:
+  name:                Robert Grimm
+
+menu: []
+legal: []
+
+# This text will appear in a `<small>` tag in the footer of every page.
+copyright:             Copyright © 2021. All rights reserved.
+
+# Format of the permalinks
+permalink:             /blog/:categories/:year-:month-:day-:title/
+
+accent_image:
+  background:          rgb(8,46,57)
+accent_color:          rgb(79,177,186)
+theme_color:           rgb(8,46,57)
+
+google_fonts: false
+font:         false
+font_heading: false
+font_code:    false
+
+defaults:
+  # Don't include documents in assets in the sitemap
+  - scope:
+      path:            assets/
+    values:
+      sitemap:         false
+
+  # `jekyll-seo-tag` will mark collection outputs as `BlogPosting`,
+  # but we want them to be `WebPage`s:
+  - scope:
+      type:            projects
+    values:
+      seo:
+        type:          WebPage
+  - scope:
+      type:            featured_categories
+    values:
+      seo:
+        type:          WebPage
+  - scope:
+      type:            featured_tags
+    values:
+      seo:
+        type:          WebPage
+
+kramdown:
+  math_engine: none
+#  math_engine:         mathjax
+#  math_engine_opts:    {}
+#  footnote_backlink:   '&#x21a9;&#xfe0e;'
+
+
+# 3rd Party Integrations
+# ----------------------------------------------------------------------------------------
+
+# Set your Google Analytics id to receive `pageview` events.
+# To remove Google Anaylics from your page, remove the line below.
+# google_analytics:      UA-XXXXXXXX-X
+
+# Setting a tinyletter username will enable the newsletter subscription box.
+# PRO version only!
+# tinyletter:            <username>
+
+
+# Hydejack Settings
+# ----------------------------------------------------------------------------------------
+# These settings are specific to Hydejack.
+
+hydejack:
+  post_addons:         [related, random, comments]
+  project_addons:      [other, comments]
+
+  no_mark_external:    false
+  no_push_state:       true
+  no_drawer:           true
+  no_navbar:           true
+  no_search:           true
+  no_inline_css:       false
+  no_page_style:       true
+  no_break_layout:     true
+  no_toc:              false
+  no_third_column:     false
+  no_large_headings:   false
+  no_theme_color:      false
+  no_breadcrumbs:      true
+  use_lsi:             true
+  cookies_banner:      false
+  advertise:           false
+  hide_dates:          true
+  hide_last_modified:  true
+  dark_mode:
+    always:            false
+    dynamic:           true
+    icon:              false
+  offline:
+    enabled:           false
+    cache_version:     13
+    precache_assets:
+      - /assets/img/swipe.svg
+
+  # Set to `true` if you do not want to expose your resume and projects
+  # in machine-readable formats.
+  no_structured_data:  false
+
+clap_button: false
+
+# Collections
+# ----------------------------------------------------------------------------------------
+
+collections:
+  featured_tags:
+    permalink:         /tag-:name/
+    output:            true
+
+  projects:
+    permalink:         /:path/
+    output:            true
+
+
+# File inclusion/exclusion
+# ----------------------------------------------------------------------------------------
+
+exclude:
+  - ./#jekyll-theme-hydejack/node_modules
+  - ./#jekyll-theme-hydejack/.git
+  - .jekyll-cache
+  - .sass-cache
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - README.md
+include:
+  - .well-known
+
+
+# Plugins
+# ----------------------------------------------------------------------------------------
+
+plugins:
+  - jekyll-default-layout
+#  - jekyll-feed
+  - jekyll-optional-front-matter
+  - jekyll-paginate
+  - jekyll-readme-index
+  - jekyll-redirect-from
+  - jekyll-relative-links
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-titles-from-headings
+  - jekyll-include-cache
+  - jekyll-last-modified-at
+
+
+# SEO Tag
+# ---------------------------------------------------------------------------------------
+
+# Where you proof that you own this site (used by jekyll-seo-tag)
+# google_site_verification: <verification-id>
+# -- or --
+# webmaster_verifications:
+#   google:              <verification-id>
+#   bing:                <verification-id>
+#   alexa:               <verification-id>
+#   yandex:              <verification-id>
+
+# Used for twitter cards
+# twitter:
+#   username:            <username>
+
+
+# Plugin Configs
+# ---------------------------------------------------------------------------------------
+optional_front_matter:
+  remove_originals:    true
+
+readme_index:
+  remove_originals:    true
+  with_frontmatter:    true
+
+relative_links:
+  collections:         true
+
+titles_from_headings:
+  strip_title:         true
+  collections:         true
+
+compress_html:
+  comments:            ["<!-- ", " -->"]
+  clippings:           all
+  endings:             all
+  ignore:
+    envs:              [development]
+
+sass:
+  style:               compressed
+
+
+# Jekyll Compose Defaults
+# ---------------------------------------------------------------------------------------
+
+jekyll_compose:
+  default_front_matter:
+    projects:
+      layout: project
+      description: > 
+        A short ~160 character description of your post for search engines,
+        social media previews, etc.
+      image:
+        path: /assets/img/sidebar-bg.jpg
+      links:
+        - title: Project Link
+          url: https://example.com
