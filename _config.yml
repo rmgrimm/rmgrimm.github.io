@@ -64,11 +64,12 @@ defaults:
       seo:
         type:          WebPage
 
-kramdown:
-  math_engine: none
+#kramdown:
 #  math_engine:         mathjax
 #  math_engine_opts:    {}
 #  footnote_backlink:   '&#x21a9;&#xfe0e;'
+kramdown:
+  math_engine: none
 
 
 # 3rd Party Integrations
@@ -144,6 +145,7 @@ collections:
 exclude:
   - ./#jekyll-theme-hydejack/node_modules
   - ./#jekyll-theme-hydejack/.git
+  - .idea
   - .jekyll-cache
   - .sass-cache
   - vendor
